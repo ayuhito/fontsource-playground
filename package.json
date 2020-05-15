@@ -1,0 +1,27 @@
+{
+  "name": "fontsource",
+  "version": "1.0.0",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^7.0.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-prettier": "^3.1.3",
+    "lerna": "^3.20.2",
+    "prettier": "^2.0.5"
+  },
+  "dependencies": {
+    "async": "^3.2.0",
+    "fs-extra": "^9.0.0",
+    "jsonfile": "^6.0.1",
+    "lodash": "^4.17.15",
+    "shelljs": "^0.8.4",
+    "sync-request": "^6.1.0",
+    "wget-improved": "^3.2.0"
+  },
+  "scripts": {
+    "format": "yarn format:prettier && yarn format:eslint",
+    "format:eslint": "eslint **/*.{js,jsx} --fix",
+    "format:prettier": "prettier --write **/*.{js,jsx,json,md}",
+    "go": "node scripts/download-google.js"
+  }
+}
