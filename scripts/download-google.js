@@ -1,11 +1,14 @@
 const _ = require(`lodash`)
 const async = require(`async`)
+const fs = require(`fs-extra`)
 const request = require(`sync-request`)
 const shell = require(`shelljs`)
 
 const baseurl = `https://google-webfonts-helper.herokuapp.com/api/fonts/`
 const res = request(`GET`, baseurl, { retry: true })
 const fonts = JSON.parse(res.getBody(`UTF-8`))
+
+fs.ensureDirSync(`packages`)
 
 // create an async queue object
 const processQueue = (font, cb) => {
