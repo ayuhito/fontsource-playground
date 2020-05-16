@@ -22,6 +22,6 @@
     "format": "yarn format:prettier && yarn format:eslint",
     "format:eslint": "eslint **/*.{js,jsx} --fix",
     "format:prettier": "prettier --write **/*.{js,jsx,json,md}",
-    "go": "node scripts/download-google.js"
+    "download-google": "node scripts/download-google.js"
   }
 }

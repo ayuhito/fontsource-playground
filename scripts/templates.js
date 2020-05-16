@@ -12,6 +12,7 @@ exports.packageJson = _.template(
     "font",
     "font family",
     "google fonts",
+    "<%= fontName %>",
     "<%= fontId %>"
   ],
   "author": "Lotus <declininglotus@gmail.com>",
@@ -39,25 +40,44 @@ exports.fontFace = _.template(
 
 exports.readme = _.template(
   `
-# <%= fontName %>
-The CSS and web font files to easily self-host “<%= fontName %>”.
-## Install
-\`npm install --save @openfonts/<%= fontId %>\`
-## Use
-Typefaces assume you’re using webpack to process CSS and files. Each fontsource
-package includes all necessary font files (woff2, woff) and a CSS file with
-font-face declarations pointing at these files.
-You will need to have webpack setup to load css and font files. Many tools built
-with Webpack will work out of the box with Typefaces such as [Gatsby](https://github.com/gatsbyjs/gatsby)
-and [Create React App](https://github.com/facebookincubator/create-react-app).
-To use, simply require the package in your project’s entry file e.g.
+# Fontsource <%= fontName %>
+
+The CSS and web font files to easily self-host the “<%= fontName %>” font. Please visit the main [Fontsource monorepo](https://github.com/DecliningLotus/fontsource) to view more details on this package.
+
+## Installation
+
+Fontsource assumes you are using a bundler such as Webpack to load in CSS. Tools like [CRA](https://create-react-app.dev/), [Gatsby](https://www.gatsbyjs.org/) and [Next.js](https://nextjs.org/) are example solutions that are compatible.
+
 \`\`\`javascript
-// Load <%= fontName %> typeface
-require('@openfonts/<%= fontId %>')
+yarn add fontsource-<%= fontId %> // npm install fontsource-<%= fontId %>
 \`\`\`
-Usage in SCSS:
+
+Then within your app entry file or site component, import it in. For example in Gatsby, you could simply import it into your \`layout.js\` component or \`gatsby-browser.js\` for limited circumstances.
+
+\`\`\`javascript
+import "fontsource-<%= fontId %>" //require("fontsource-<%= fontId %>")
+\`\`\`
+
+Fontsource allows you to select font subsets, weights and even individual styles, allowing you to cut down on payload sizes to the last byte! The default selection above, however, sticks to the Latin subset including all weights and styles.
+
+\`\`\`javascript
+import "fontsource-<%= fontId %>/latin-ext.css" // All weights and styles included.
+import "fontsource-<%= fontId %>/cyrillic-ext-400.css" // All styles included.
+import "fontsource-<%= fontId %>/greek-700-normal.css" // Select either normal or italic.
+\`\`\`
+
+Alternatively, the same solutions could be imported via SCSS!
+
 \`\`\`scss
-@import "~@openfonts/<%= fontId %>/index.css";
+@import "~fontsource-<%= fontId %>/index.css";
+@import "~fontsource-<%= fontId %>/vietnamese-300-italic.css";
 \`\`\`
+
+_Do confirm on Google Fonts (or elsewhere) whether your font supports a certain subset, weight or style beforehand as these examples may not reflect actual compatibility._
+
+## Other Notes
+
+Feel free to star and contribute new ideas to this repository that aim to improve the performance of font loading, as well as expanding the existing library we already have. Any suggestions or ideas can be voiced via an [issue](https://github.com/DecliningLotus/fontsource/issues).
+
 `
 )

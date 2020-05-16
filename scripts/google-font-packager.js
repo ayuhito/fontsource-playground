@@ -247,6 +247,7 @@ if (changed && success) {
   // Write last-modified.json
   jsonfile.writeFileSync(`${fontDir}/last-modified.json`, {
     lastModified: apiFont.lastModified,
+    version: apiFont.version,
   })
 }
 
