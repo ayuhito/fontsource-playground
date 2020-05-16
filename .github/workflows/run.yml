@@ -1,0 +1,27 @@
+name: Build and Release
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+      - uses: actions/checkout@v2
+      - name: Configure CI Git User
+        run: |
+          git config --global user.name '@DecliningLotus'
+          git config --global user.email 'DecliningLotus@users.noreply.github.com'
+          git remote set-url origin https://$GITHUB_ACTOR:$GITHUB_PAT@github.com/DecliningLotus/fontsource-playground
+        env:
+          GITHUB_PAT: ${{ secrets.GITHUB_PAT }}
+      - name: Install packages
+        run: yarn
+      - name: Build fonts
+        run: yarn build-google
+      - name: Commit files
+        run: git commit -m "Updated outdated fonts."
+      - name: Push changes  # push the output folder to your repo
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
