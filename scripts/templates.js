@@ -46,7 +46,7 @@ The CSS and web font files to easily self-host the “<%= fontName %>” font. P
 
 ## Installation
 
-Fontsource assumes you are using a bundler such as Webpack to load in CSS. Tools like [CRA](https://create-react-app.dev/), [Gatsby](https://www.gatsbyjs.org/) and [Next.js](https://nextjs.org/) are example solutions that are compatible.
+Fontsource assumes you are using a bundler, such as Webpack, to load in CSS. Tools like [CRA](https://create-react-app.dev/), [Gatsby](https://www.gatsbyjs.org/) and [Next.js](https://nextjs.org/) are prebuilt example solutions that are compatible.
 
 \`\`\`javascript
 yarn add fontsource-<%= fontId %> // npm install fontsource-<%= fontId %>
@@ -69,8 +69,8 @@ import "fontsource-<%= fontId %>/greek-700-normal.css" // Select either normal o
 Alternatively, the same solutions could be imported via SCSS!
 
 \`\`\`scss
-@import "~fontsource-<%= fontId %>/index.css";
-@import "~fontsource-<%= fontId %>/vietnamese-300-italic.css";
+@import "~fontsource-<%= fontId %>/index";
+@import "~fontsource-<%= fontId %>/vietnamese-300-italic";
 \`\`\`
 
 _Do confirm on Google Fonts (or elsewhere) whether your font supports a certain subset, weight or style beforehand as these examples may not reflect actual compatibility._

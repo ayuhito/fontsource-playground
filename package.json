@@ -22,6 +22,13 @@
     "format": "yarn format:prettier && yarn format:eslint",
     "format:eslint": "eslint **/*.{js,jsx} --fix",
     "format:prettier": "prettier --write **/*.{js,jsx,json,md}",
-    "download-google": "node scripts/download-google.js"
-  }
+    "build-google": "node scripts/download-google.js",
+    "deploy": "lerna publish --message 'chore: release new versions'",
+    "deploy:ci": "lerna publish --yes --message 'chore: release new versions'",
+    "deploy:dry-run": "lerna publish --yes --no-git-tag-version --no-push"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "private": true
 }
