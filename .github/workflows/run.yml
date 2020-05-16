@@ -27,7 +27,8 @@ jobs:
         run: git add .
 
       - name: Commit files
-        run: git commit -m "Updated outdated fonts."
+        run: >-
+          git commit -m "chore(build): update fontsources"
 
       - name: Push changes
         uses: ad-m/github-push-action@master
