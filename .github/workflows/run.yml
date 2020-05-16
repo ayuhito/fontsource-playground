@@ -13,9 +13,6 @@ jobs:
         run: |
           git config --global user.name 'DecliningLotus'
           git config --global user.email 'DecliningLotus@users.noreply.github.com'
-          git remote set-url origin https://$GITHUB_ACTOR:$GITHUB_PAT@github.com/DecliningLotus/fontsource-playground
-        env:
-          GITHUB_PAT: ${{ secrets.GITHUB_PAT }}
 
       - name: Install packages
         run: yarn
