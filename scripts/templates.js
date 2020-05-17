@@ -22,7 +22,7 @@ exports.packageJson = _.template(
 )
 
 exports.fontFace = _.template(
-  `/* <%= fontId %>-<%= subset %>-<%= weight %>-<%= style %> */
+  `/* <%= fontId %>-<%= subset %>-<%= weight %>-<%= style %> Playgrounds*/
 @font-face {
   font-family: '<%= fontName %>';
   font-style: <%= style %>;
