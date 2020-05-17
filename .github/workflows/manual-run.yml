@@ -26,7 +26,7 @@ jobs:
         run: yarn build-google
 
       - name: Stage changes
-        run: git add .
+        run: git add --all
 
       - name: Commit files
         run: >-
