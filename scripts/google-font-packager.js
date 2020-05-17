@@ -242,7 +242,11 @@ if (changed && success) {
     fontId: apiFont.id,
     fontName: apiFont.family,
   })
-  fs.writeFileSync(`${fontDir}/package.json`, packageJSON)
+  if (fs.existsSync(`${fontDir}/package.json`)) {
+    return
+  } else {
+    fs.writeFileSync(`${fontDir}/package.json`, packageJSON)
+  }
 
   // Write last-modified.json
   jsonfile.writeFileSync(`${fontDir}/last-modified.json`, {
