@@ -33,6 +33,10 @@ jobs:
           git commit -m "chore(build): update fontsources $GITHUB_RUN_NUMBER"
         continue-on-error: true
 
+      - name: Check Git
+        run: >-
+          git diff --cached
+
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
