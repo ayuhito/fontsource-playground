@@ -24,8 +24,8 @@
     "format:eslint": "eslint **/*.{js,jsx} --fix",
     "format:prettier": "prettier --write **/*.{js,jsx,json,md}",
     "build-google": "node scripts/download-google.js",
-    "deploy": "lerna publish patch --dist-tag --message 'chore: release new versions'",
-    "deploy:ci": "lerna changed && lerna diff",
+    "deploy": "lerna publish patch --message 'chore: release new versions'",
+    "deploy:ci": "lerna publish patch --yes --message 'chore: release new versions'",
     "deploy:dry-run": "lerna publish --yes --no-git-tag-version --no-push"
   },
   "publishConfig": {
