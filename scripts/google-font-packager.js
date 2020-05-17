@@ -40,7 +40,6 @@ fs.ensureDirSync(fontDir)
 fs.ensureDirSync(`${fontDir}/files`)
 
 // Update checking
-let success = false
 let changed = false
 
 if (fs.existsSync(`${fontDir}/last-modified.json`)) {
@@ -225,11 +224,13 @@ if (changed) {
       })
     })
   })
-  success = true
 }
 
+console.log(changed)
+
 // If everything ran successfully, apply new updates to package.
-if (changed && success) {
+if (changed) {
+  console.log(changed)
   // Write README.md
   const packageReadme = readme({
     fontId: apiFont.id,
@@ -242,9 +243,7 @@ if (changed && success) {
     fontId: apiFont.id,
     fontName: apiFont.family,
   })
-  if (fs.existsSync(`${fontDir}/package.json`)) {
-    return
-  } else {
+  if (!fs.existsSync(`${fontDir}/package.json`)) {
     fs.writeFileSync(`${fontDir}/package.json`, packageJSON)
   }
 
