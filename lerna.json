@@ -2,5 +2,5 @@
   "packages": ["packages/*"],
   "npmClient": "yarn",
   "version": "independent",
-  "ignoreChanges": ["**/b612-mono/**", "**/b612/**", "**/*.md"]
+  "ignoreChanges": ["**/*.md"]
 }
