@@ -226,11 +226,8 @@ if (changed) {
   })
 }
 
-console.log(changed)
-
 // If everything ran successfully, apply new updates to package.
 if (changed) {
-  console.log(changed)
   // Write README.md
   const packageReadme = readme({
     fontId: apiFont.id,
