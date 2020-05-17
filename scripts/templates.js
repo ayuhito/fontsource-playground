@@ -1,9 +1,8 @@
 const _ = require(`lodash`)
 
 exports.packageJson = _.template(
-  `
-{
-  "name": "fontsource-<%= fontId %>",
+  `{
+  "name": "fontsource-playground-<%= fontId %>",
   "version": "1.0.0",
   "description": "<%= fontName %> font in NPM glory.",
   "main": "index.css",
@@ -39,8 +38,9 @@ exports.fontFace = _.template(
 )
 
 exports.readme = _.template(
-  `
-# Fontsource <%= fontName %>
+  `# Fontsource <%= fontName %>
+
+# Do not use this Playgrounds edition, as it is an unstable testing branch of the original [Fontsource monorepo](https://github.com/DecliningLotus/fontsource).
 
 The CSS and web font files to easily self-host the “<%= fontName %>” font. Please visit the main [Fontsource monorepo](https://github.com/DecliningLotus/fontsource) to view more details on this package.
 

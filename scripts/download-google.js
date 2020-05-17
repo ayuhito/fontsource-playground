@@ -35,19 +35,21 @@ const test = () => {
   queue.push(`roboto`) // 7 subsets, 12 styles
   queue.push(`orienta`) // 1 subset, 2 styles
   queue.push(`arbutus`) // 2 subsets, 1 style
-  queue.push(`mate-sc`) // 1 subset, 1 style
-  queue.push(`noticia-text`) // 3 subsets, 4 styles
-  queue.push(`open-sans`)
-  queue.push(`lato`)
-  queue.push(`montserrat`)
+  //queue.push(`mate-sc`) // 1 subset, 1 style
+  //queue.push(`noticia-text`) // 3 subsets, 4 styles
+  //queue.push(`open-sans`)
+  //queue.push(`lato`)
+  //queue.push(`montserrat`)
   queue.push(`noto-sans-jp`)
+  queue.push(`b612-mono`)
+  queue.push(`b612`)
 }
 test()
 
 // Production
-const production = () => {
+/*const production = () => {
   _.forOwn(fonts, font => {
     queue.push(`${font.id}`)
   })
 }
-//production()
+production()*/
